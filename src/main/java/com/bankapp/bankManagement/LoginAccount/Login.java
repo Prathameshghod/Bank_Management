@@ -1,11 +1,15 @@
-package com.bankapp;
+package com.bankapp.bankManagement.LoginAccount;
+
+import com.bankapp.connection;
 
 import java.io.BufferedReader;
-import java.io.BufferedInputStream;
 import java.io.InputStreamReader;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-public class bankmanagement {
+public class Login {
+
     static Connection c = connection.getConnection();
 
     public static boolean login(String name, int pass_key) {
@@ -36,7 +40,7 @@ public class bankmanagement {
                     if (ch == 1) {
                         System.out.println("Enter Receiver Account no.");
                         int receiver_acc = Integer.parseInt(sc.readLine());
-                        int amt=Integer.parseInt(sc.readLine());
+                        int amt = Integer.parseInt(sc.readLine());
                         if (transferMoney(sender_acc, receiver_acc, amt)) {
                             System.out.println("Transaction Successfull");
                         } else {
@@ -53,13 +57,9 @@ public class bankmanagement {
                 }
                 return true;
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
     }
-
-
 }
-
