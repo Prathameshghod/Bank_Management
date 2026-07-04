@@ -41,21 +41,22 @@ public class Login {
                         System.out.println("Enter Receiver Account no.");
                         int receiver_acc = Integer.parseInt(sc.readLine());
                         int amt = Integer.parseInt(sc.readLine());
-                        if (transferMoney(sender_acc, receiver_acc, amt)) {
+                        if (transferMoney.transfer_Money(sender_acc, receiver_acc, amt)) {
                             System.out.println("Transaction Successfull");
                         } else {
                             System.out.println("Transaction failed! Please try again.");
                         }
-                    } else if (ch == 2) {
-                        getBalance(sender_acc);
+                    }
+                    else if (ch == 2) {
+                        getBalance.getbalance(sender_acc);
                     } else if (ch == 3) {
                         System.out.println("Logged out successfully. Returning to main menu.");
                         break;
-                    } else {
+                    }
+                      else {
                         System.out.println("Invalid choice! Try again.");
                     }
                 }
-                return true;
             }
         } catch (Exception e) {
             e.printStackTrace();

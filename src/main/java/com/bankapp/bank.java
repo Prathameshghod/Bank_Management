@@ -1,5 +1,8 @@
 package com.bankapp;
 
+import com.bankapp.bankManagement.CreateAccount;
+import com.bankapp.bankManagement.LoginAccount.Login;
+
 import java.io.BufferedReader;
 import java.io.BufferedInputStream;
 import java.io.InputStreamReader;
@@ -30,7 +33,7 @@ public class bank {
                         System.out.println("Enter Pass Key");
                         pass_key = Integer.parseInt(sc.readLine());
 
-                        if(bankmanagement.createAccount(name,pass_key)){
+                        if(CreateAccount.createAccount(name,pass_key)){
                             System.out.println("Bank Account Created Successfully you can log in now");
                         }
                         else{
@@ -43,7 +46,7 @@ public class bank {
                         System.out.println("Enter Password");
                         pass_key=Integer.parseInt(sc.readLine());
 
-                        if(!bankmanagement.login(name,pass_key)){
+                        if(!Login.login(name,pass_key)){
                             System.out.println("Login Failed");
                         }
                     }
