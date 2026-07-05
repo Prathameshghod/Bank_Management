@@ -50,11 +50,15 @@ public class bank {
                             System.out.println("Login Failed");
                         }
                     }
-
+                    case 3->{
+                        System.out.println("Thanks for visiting");
+                        System.exit(0);
+                    }
+                    default -> System.out.println("Invalid input! Please try again.");
                 }
             }
             catch(Exception e){
-
+                System.out.println("Invalid input");
             }
         }
     }
